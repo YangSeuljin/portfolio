@@ -3,8 +3,6 @@
 const navbar = document.querySelector('#navbar');
 const navbarHeight = navbar.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
-    console.log(window.scrollY);
-    console.log(`navbarHeight : ${navbarHeight}`);
     if (window.scrollY > navbarHeight) {
         navbar.classList.add('navbar--dark');
     } else {
@@ -20,8 +18,18 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-    console.log(event.target.dataset.link);
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({ behavior: 'smooth' });
+    scrollIntoView(link);
 })
 
+//Handle click on "contact me" button on home
+const homeContactBtn = document.querySelector('.home__contact');
+homeContactBtn.addEventListener('click', () => {
+    const scrollTo = document.querySelector('#contact');
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+    scrollIntoView('#contact');
+})
+
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
