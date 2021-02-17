@@ -412,5 +412,12 @@ button {
   color: var(--color-white);
   background-color: var(--color-blue);
   border-radius: 50%;
-  display: none;
+  opacity: 0;
+  transition: all 300ms ease-in;
+  pointer-events: none;
+}
+
+.arrow-up.visible{
+  opacity:1;
+  pointer-events:auto;
 }
