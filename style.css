@@ -88,19 +88,22 @@ ul {
 
 #navbar.navbar--dark {
   background-color: rgba(28, 190, 210, 255);
-  padding: 18px;
+  padding: 8px;
+  opacity: 0.95;
 }
 .navbar__menu {
   display: flex;
 }
 .navbar__menu__item {
-  padding: 8px 12px;
-  margin: 0 4 px;
+  padding: 8px 15px;
   cursor: pointer;
 }
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+.navbar__logo a {
+  color: var(--color-white);
 }
 .navbar__menu__item.active {
   border: 1px solid var(--color-white);
@@ -115,7 +118,7 @@ ul {
   padding-top: 120px;
   background: url("imgs/home-background.png");
 }
-.home_avatar {
+.home__avatar {
   width: 250px;
   height: 250px;
   border-radius: 50%;
@@ -130,6 +133,10 @@ ul {
   padding: 8px 12px;
   font-weight: var(--weight-bold);
 }
+.home__title,
+.home__description {
+  color: var(--color-white);
+}
 button {
   background-color: transparent;
   cursor: pointer;
@@ -138,9 +145,10 @@ button {
 }
 /* Section common */
 .section {
-  padding: 50px;
+  padding: 30px;
   text-align: center;
   margin: auto;
+  max-width: 1800px;
 }
 .section__container {
   margin: auto;
@@ -239,7 +247,7 @@ button {
 .category__btn {
   border: 1px solid var(--color-dark-grey);
   border-radius: 4px;
-  padding: 8px 40px;
+  padding: 8px 15px;
   font-size: var(--font-regular);
 }
 
@@ -332,12 +340,12 @@ button {
 }
 /*Contact  */
 #contact {
-  background-color: cornflowerblue;
+  background-color: rgba(28, 190, 210, 255);
   margin: 30px 0 0 0;
 }
 .contact__title,
 .contact__email {
-  margin: 32px 0;
+  margin: 20px 0;
   color: var(--color-light-white);
 }
 
@@ -352,7 +360,7 @@ button {
 }
 .navbar__toggle-btn {
   position: absolute;
-  top: 24px;
+  top: 13px;
   right: 32px;
   font-size: 24px;
   color: var(--color-white);
@@ -392,4 +400,17 @@ button {
     flex-direction: column;
     align-items: center;
   }
+}
+/* Scroll */
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  color: var(--color-white);
+  background-color: var(--color-blue);
+  border-radius: 50%;
+  display: none;
 }
