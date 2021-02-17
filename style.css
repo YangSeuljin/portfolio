@@ -74,17 +74,21 @@ ul {
 }
 /* Navbar */
 #navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: var(--color-white);
-  background-color: rgb(82, 167, 206);
+  /* background-color: rgb(82, 167, 206); */
+  background-color: transparent;
   padding: 16px;
+  transition: all 250ms ease-in-out;
+  width: 100%;
 }
 
-a {
-  text-decoration: none;
-  color: var(--color-white);
+#navbar.navbar--dark {
+  background-color: rgba(28, 190, 210, 255);
+  padding: 18px;
 }
 .navbar__menu {
   display: flex;
@@ -108,7 +112,7 @@ a {
 }
 #home {
   padding: 40px;
-  text-align: center;
+  padding-top: 120px;
   background: url("imgs/home-background.png");
 }
 .home_avatar {
@@ -302,6 +306,7 @@ button {
   opacity: 0;
   transition: all 200ms ease;
   transform: translateY(10px);
+  color: var(--color-white);
 }
 .project:hover .project__description {
   opacity: 0.6;
