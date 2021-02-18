@@ -105,6 +105,7 @@ ul {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  margin-left: 20px;
 }
 .navbar__logo a {
   color: var(--color-white);
@@ -256,7 +257,7 @@ button {
 .category__btn {
   border: 1px solid var(--color-dark-grey);
   border-radius: 4px;
-  padding: 8px;
+  padding: 8px 8px;
   font-size: var(--font-regular);
   margin: 10px;
 }
@@ -408,7 +409,7 @@ button {
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px;
+    padding: 16px 0px;
   }
 
   #navbar.navbar--dark {
@@ -420,7 +421,6 @@ button {
     width: 100%;
     display: none;
     background-color: rgba(28, 190, 210, 255);
-    padding: 16px;
   }
   .navbar__menu.open {
     display: block;
