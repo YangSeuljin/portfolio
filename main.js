@@ -2,6 +2,7 @@
 
 const navbar = document.querySelector("#navbar");
 const navbarHeight = navbar.getBoundingClientRect().height;
+const navbarMenu = document.querySelector(".navbar__menu");
 document.addEventListener("scroll", () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add("navbar--dark");
@@ -11,14 +12,24 @@ document.addEventListener("scroll", () => {
 });
 
 // Handle scrolling when tapping on the navbar menu
-const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
   const link = target.dataset.link;
   if (link == null) {
     return;
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+const navbarMenus = document.querySelectorAll(".navbar__menu");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenus.forEach((navbarmenu) => {
+    console.log("click");
+    navbarmenu.classList.toggle("open");
+  });
 });
 
 //Handle click on "contact me" button on home
@@ -64,7 +75,6 @@ workBtnContainer.addEventListener("click", (e) => {
 
   setTimeout(() => {
     projects.forEach((project) => {
-      console.log(project.dataset.type);
       if (filter === "*" || filter === project.dataset.type) {
         project.classList.remove("invisible");
       } else {
@@ -79,16 +89,6 @@ workBtnContainer.addEventListener("click", (e) => {
   const target =
     e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
   target.classList.add("selected");
-});
-
-const categoryBtns = document.querySelectorAll(".category__btn");
-categoryBtns.forEach((categoryBtn) => {
-  debugger;
-  categoryBtn.addEventListener("mouseover", (e) => {
-    if (e.target.nodeName === "BUTTON") {
-      console.log("mouseover");
-    }
-  });
 });
 
 function scrollIntoView(selector) {
