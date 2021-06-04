@@ -205,6 +205,8 @@ button {
 .job {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 10px;
 }
 .job__description {
   margin: 0 16px;
